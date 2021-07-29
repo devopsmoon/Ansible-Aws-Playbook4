@@ -43,7 +43,7 @@
         map_public: yes
         tags:
            Name: vprofile-pubsubnet2
-       register: pubsub2_out
+      register: pubsub2_out
 
     - name: creating the public subnet3
       ec2_vpc_subnet:
