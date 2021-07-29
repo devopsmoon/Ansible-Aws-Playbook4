@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - Name: importing the variables
-      include_vars: variables/vpc_setup
+        include_vars: variables/vpc_setup
 
     - Name: creating the vpc setup
       ec2_vpc_net:
