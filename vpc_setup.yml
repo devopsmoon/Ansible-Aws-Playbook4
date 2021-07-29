@@ -33,8 +33,8 @@
           Name: vprofile-pubsubnet1
       register: pubsub1_out
 
-     - name: creating the public subnet2
-       ec2_vpc_subnet:
+    - name: creating the public subnet2
+      ec2_vpc_subnet:
          vpc_id: "{{vpcout.vpc.id}}"
          region: "{{region}}"
          az: "{{zone2}}"
