@@ -1,0 +1,22 @@
+- name: playbook for vpc setup
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: importing the variable files
+      include_vars: variables/vpc_setup
+
+    - name: creating the vpc name and subnets
+      ec2_vpc_net:
+        name: "{{vpc_name}}"
+        region: "{{region}}"
+        cidr_block: "{{vpccidr}}"
+        tenancy: default
+        dns_support: true
+        dns_hostnames: true
+        state: present
+      register: vpcout
+
+    - debug:
+        var: vpcout
