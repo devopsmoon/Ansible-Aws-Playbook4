@@ -154,6 +154,7 @@
         - pubrt_out.route_table.id
         - natgw_out.nat_gateway_id
         - prirt_out.route_table.id
+
       set_fact:
         vpcid: "{{vpcout.vpc.id}}"
         pubsub1id: "{{pubsub1_out.subnet.id}}"
