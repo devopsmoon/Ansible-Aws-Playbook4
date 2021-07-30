@@ -1,0 +1,12 @@
+- name: playbook for creating the e2_instance in aws
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: true
+  tasks:
+    - name: importing the variables
+      include_vars: variables/Bastion_setup
+
+    - name: importing the variables
+      include_vars: variables/output_vars
+
