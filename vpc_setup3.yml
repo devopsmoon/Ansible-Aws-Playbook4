@@ -104,11 +104,13 @@
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
         state: present
+        tags:
+          Name: vprofile-PubRT
         subnets:
           - "{{pubsub1cidr.subnet.id}}"
           - "{{pubsub2cidr.subnet.id}}"
           - "{{pubsub3cidr.subnet.id}}"
         routes:
-          dest: 0.0.0.0/0
-          gateway_id: "{{vpcigw_out.gateway_id}}"
+          - dest: 0.0.0.0/0
+            gateway_id: "{{vpcigw_out.gateway_id}}"
       register: pubRT_out
