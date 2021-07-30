@@ -103,11 +103,12 @@
       ec2_vpc_route_table:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
+        state: present
         subnets:
           - "{{pubsub1cidr.subnet.id}}"
           - "{{pubsub2cidr.subnet.id}}"
           - "{{pubsub3cidr.subnet.id}}"
         routes:
           dest: 0.0.0.0/0
-          gateway_id: "{{vpcigw_out.gateway_id}}"
+          gateway_id: "{{vpcigw_out.gateway.id}}"
       register: pubRT_out
