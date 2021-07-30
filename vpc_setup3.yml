@@ -114,3 +114,28 @@
           - dest: 0.0.0.0/0
             gateway_id: "{{vpcigw_out.gateway_id}}"
       register: pubrt_out
+
+    - name: creating the nat gateway
+      ec2_vpc_nat_gateway:
+        region: "{{region}}"
+        state: present
+        subnet_id: "{{pubsub1cidr}}"
+        wait: true
+        if_exist_do_not_create: true
+      register: natgw_out
+
+    - name: creating the route table for nat gateway
+      ec2_vpc_route_table:
+        vpc_id: "{{vpcout.vpc.in}}"
+        region: "{{region}}"
+        state: present
+        tags:
+          Name: vprofile-prirt
+        subnets:
+          - "{{prisub1_out.subnet.id}}"
+          - "{{prisub2_out.subnet.id}}"
+          - "{{prisub3._out.subnet.id}}"
+        routes:
+          - dest: 0.0.0.0/0
+            gateway_id: "{{natgw_out.nat_gateway.id}}"
+      register: prirt_out
