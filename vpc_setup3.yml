@@ -4,6 +4,9 @@
   connection: local
   gather_facts: false
   tasks:
+    - name:
+      include_vars: variables/vpc_setup
+
     - name: creating vpc setup and subnet
       ec2_vpc_net:
         name: "{{vpc_name}}"
