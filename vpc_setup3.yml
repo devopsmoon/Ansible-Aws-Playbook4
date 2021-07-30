@@ -26,7 +26,7 @@
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
         az: "{{zone1}}"
-        cidr: "{{vpccidr}}"
+        cidr: "{{pubsub1.cidr}}"
         state: present
         map_public: true
         tags:
