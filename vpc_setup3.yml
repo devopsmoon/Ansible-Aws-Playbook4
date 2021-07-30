@@ -38,7 +38,7 @@
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
         az: "{{zone2}}"
-        cidr: "{{pubsub1cidr}}"
+        cidr: "{{pubsub2cidr}}"
         state: present
         map_public: true
         tags:
@@ -50,7 +50,7 @@
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
         az: "{{zone3}}"
-        cidr: "{{pubsub2cidr}}"
+        cidr: "{{pubsub3cidr}}"
         state: present
         map_public: true
         tags:
@@ -62,7 +62,7 @@
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
         az: "{{zone1}}"
-        cidr: "{{pubsub3cidr}}"
+        cidr: "{{prisub1cidr}}"
         state: present
         tags:
           Name: vprofile-prisubnet2
