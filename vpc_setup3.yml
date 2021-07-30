@@ -126,7 +126,7 @@
 
     - name: creating the route table for nat gateway
       ec2_vpc_route_table:
-        vpc_id: "{{vpcout.vpc.in}}"
+        vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
         state: present
         tags:
