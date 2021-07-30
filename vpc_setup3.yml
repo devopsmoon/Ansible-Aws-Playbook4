@@ -107,9 +107,9 @@
         tags:
           Name: vprofile-pubrt
         subnets:
-          - "{{pubsub1cidr.subnet.id}}"
-          - "{{pubsub2cidr.subnet.id}}"
-          - "{{pubsub3cidr.subnet.id}}"
+          - "{{pubsub1_out.subnet.id}}"
+          - "{{pubsub2_out.subnet.id}}"
+          - "{{pubsub3_out.subnet.id}}"
         routes:
           - dest: 0.0.0.0/0
             gateway_id: "{{vpcigw_out.gateway_id}}"
