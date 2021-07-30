@@ -92,7 +92,7 @@
 
     - name: creating the internet gateway
       ec2_vpc_igw:
-        vpc_id: "{{region}}"
+        vpc_id: "{{vpcout.vpc.id}"
         region: "{{region}}"
         state: present
         tags:
