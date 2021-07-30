@@ -132,9 +132,9 @@
         tags:
           Name: vprofile-prirt
         subnets:
-          - "{{prisub1cidr.subnet.id}}"
-          - "{{prisub2cidr.subnet.id}}"
-          - "{{prisub3cidr.subnet.id}}"
+          - "{{prisub1_out.subnet.id}}"
+          - "{{prisub2_out.subnet.id}}"
+          - "{{prisub3_out.subnet.id}}"
         routes:
           - dest: 0.0.0.0/0
             gateway_id: "{{natgw_out.nat_gateway_id}}"
