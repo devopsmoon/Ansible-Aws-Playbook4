@@ -117,9 +117,9 @@
 
     - name: creating the nat gateway
       ec2_vpc_nat_gateway:
-        region: "{{region}}"
         state: present
-        subnet_id: "{{pubsub1cidr}}"
+        region: "{{region}}"
+        subnet_id: "{{pubsub1_out.subnet.id}}"
         wait: true
         if_exist_do_not_create: true
       register: natgw_out
