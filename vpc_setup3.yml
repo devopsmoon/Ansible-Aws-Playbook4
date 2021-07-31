@@ -143,7 +143,7 @@
     - debug:
         var: "{{item}}"
       loop:
-        - vpcout_vpc_id
+        - vpcout_vpc.id
         - pubsub1_out.subnet.id
         - pubsub2_out.subnet.id
         - pubsub3_out.subnet.id
@@ -170,6 +170,6 @@
         cacheable: yes
     - name:
       copy:
-        content: "{{vpcout.vpc.id}}\n{{pubsub1_out.subnet.id}}\n{{pubsub2_out.subnet.id}}\n{{pubsub3_out.subnet.id}}\n{{prisub1_out.subnet.id}}\n{{prisub2_out.subnet.id}}\n{{prisub3_out.subnet.id}}\n{{vpcigw_out.gateway_id}}\n{{pubrt_out.route_table.id}}\n{{natgw_out.nat_gateway_id}}\n{{prirt_out.route_table.id}}"
+        content: "vpcid: {{vpcout.vpc.id}}\npubsub1id: {{pubsub1_out.subnet.id}}\npubusu2id: {{pubsub2_out.subnet.id}}\npubsub3id: {{pubsub3_out.subnet.id}}\nprisub1id: {{prisub1_out.subnet.id}}\nprisub2id: {{prisub2_out.subnet.id}}\nprisub3id: {{prisub3_out.subnet.id}}\nigwid: {{vpcigw_out.gateway_id}}\npubrtid: {{pubrt_out.route_table.id}}\nnatgwid: {{natgw_out.nat_gateway_id}}\nprirtid: {{prirt_out.route_table.id}}"
         dest: variables/output_vars
 

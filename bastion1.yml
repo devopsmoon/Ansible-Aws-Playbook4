@@ -54,4 +54,5 @@
           project: vprofile
           owner: Devops
         group_id: "{{Bastionsg_out.group_id}}"
+        vpc_subnet_id:
       register: bastionhost_out
