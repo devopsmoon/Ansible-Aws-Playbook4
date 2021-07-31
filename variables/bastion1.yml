@@ -1,0 +1,18 @@
+- name: creating the ec2 key pair
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: create aws key
+      ec2_key:
+        name: vprifle-key
+        region: "{{region}}"
+      register: keyout
+
+    - name: storing the aws key
+      copy:
+        content: "{{keyout.key.private_key}}"
+        dest: ./vprofile-key.pem
+        mode: 0600
+      when: keyout.changed = true

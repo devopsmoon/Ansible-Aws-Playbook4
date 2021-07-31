@@ -10,3 +10,21 @@
     - name: importing the variables
       include_vars: variables/output_vars
 
+    - name: creating the key pair in aws
+      ec2_key:
+        Name: vprofile-key
+        region: "{{region}}"
+      register: key_out
+
+    - name: creating the
+      copy:
+        content: "{{key_out.key.private_key}}"
+        dest: "./bastion-key.pem"
+        mode: 0600
+      when: key_out.changed = true
+
+
+
+
+
+
