@@ -26,7 +26,7 @@
     - name: creating the security group for bastion hosts
       ec2_group:
         name: Bastion-host-sg
-        description:
+        description: Allow 22 from any where
         region: "{{region}}"
         vpc_id: "{{vpcid}}"
         rules:
