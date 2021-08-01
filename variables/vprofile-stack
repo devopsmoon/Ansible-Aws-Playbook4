@@ -1,0 +1,6 @@
+nginx_ami: ami-09611bd6fa5dd0e3d
+tomcat_ami: ami-09611bd6fa5dd0e3d
+memcached_ami: ami-09611bd6fa5dd0e3d
+rmq_ami: ami-09611bd6fa5dd0e3d
+mysql_ami: ami-09611bd6fa5dd0e3d
+region: "ap-south-1"
