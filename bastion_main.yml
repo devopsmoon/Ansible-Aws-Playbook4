@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
     - name: importing the variables
-      include_vars: variables/Bastion_setup
+      include_vars: variables/vpc_setup
 
     - name: importing ghe variables
       include_vars: variables/output_vars
