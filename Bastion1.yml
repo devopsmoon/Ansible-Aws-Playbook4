@@ -53,12 +53,12 @@
         wait: yes
         wait_timeout: 300
         instance_tags:
-          name: Bastion-SG
+          name: "Bastion-SG"
           project: vprofile
           owner: Devops
         exact_count: 1
         count_tag:
-          name: Bastion-SG
+          name: "Bastion-SG"
           project: vprofile
           owner: Devops
         group_id: "{{Bastion_SG.group_id}}"
