@@ -49,7 +49,7 @@
         region: "{{region}}"
         state: present
         instance_type: t2.micro
-        image: "{{ami_image}}"
+        image: "{{bastion_ami}}"
         wait: yes
         wait_timeout: 300
         instance_tags:
