@@ -30,7 +30,20 @@
         mode: 0600
       when: keyout.changed
 
-    - name: creating the security group of bastion instance
+    - name: creating the security group of bastion host
+      ec2_group:
+        name: bastion-SG
+        description: allow port 22 from any where
+        region: "{{region}}"
+        state: present
+        rules:
+          - proto: tcp
+            from_port: 22
+            to_port: 22
+            cidr_ip: "{{MYIP}}"
+      register: BastionSG_out
+
+    - name: creating the bastion instance
       ec2:
         key_name: profile-name
         region: "{{region}}"
