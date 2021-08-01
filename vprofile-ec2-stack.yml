@@ -4,4 +4,5 @@
   connection: local
   gather_facts: false
   tasks:
-    - name:
+    - name: importing the variables
+      include_vars: variables/vpc_setup
