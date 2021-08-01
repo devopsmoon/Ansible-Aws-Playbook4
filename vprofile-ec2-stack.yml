@@ -1,0 +1,7 @@
+- name: playbook for ec2 stacks
+  hosts: localhost
+  become: true
+  connection: local
+  gather_facts: false
+  tasks:
+    - name:
